@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 #Practical Machine Learning Project : Prediction Assignment Writeup
 
 ##I. Overview
@@ -71,7 +75,7 @@ dim(data_quiz)
 Both created datasets have 160 variables. Those variables have plenty of NA, that can be removed with the cleaning procedures below. 
 
 ```{r}
-in_train  <- createDataPartition(data_train$classe, p=0.75, list=FALSE)
+in_train  <- createDataPartition(data_train$classe, p=0.70, list=FALSE)
 train_set <- data_train[ in_train, ]
 test_set  <- data_train[-in_train, ]
 dim(train_set)
@@ -438,5 +442,4 @@ Random Forest Model: 99.78 %
 The Random Forest model is selected and applied to make predictions on the 20 data points from the original testing dataset (data_quiz).
 ```{r}
 cat("Predictions: ", paste(predict(fit_RF, data_quiz)))
->>>>>>> abefae462da2bda6c064e0fcc0043ed00df665fb
 ```
